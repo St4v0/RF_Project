@@ -25,7 +25,6 @@ try
     thetas=[theta1 theta2 theta3 theta4 theta5];
 
 catch e %is an MException struct
-    disp("position impossible");
     fprintf(1,e.identifier);
     fprintf(1,e.message);
 
