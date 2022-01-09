@@ -1,15 +1,15 @@
 function maliste = plot_links(thetas)
 % angles des liaisons pivots en RAD
-theta1 = rad2deg(thetas(1));
-theta2 = rad2deg(thetas(2));
-theta3 = rad2deg(thetas(3));
-theta4 = rad2deg(thetas(4));
-theta5 = rad2deg(thetas(5));
+theta1 = thetas(1);
+theta2 = thetas(2);
+theta3 = thetas(3);
+theta4 = thetas(4);
+theta5 = thetas(5);
 
-d1 = 0.079;
-L1 = 0.121;
-L2 = 0.121;
-L3 = 0.142;
+d1 = 1; %0.079;
+L1 = 1; %0.121;
+L2 = 1; %0.121;
+L3 = 1; %0.142;
 %max height 0.463
 
 %calculate the matrixes
