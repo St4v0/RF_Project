@@ -24,8 +24,8 @@ T_16 = T_12 * T_23  *T_34 *T_45 *T_56;
 
 %T_16(ligne, colonne)
 
-PSI = Q2+Q3+Q4
-WRIST_ANGLE = Q5
+PSI = Q2+Q3+Q4;
+WRIST_ANGLE = Q5;
 
 xt = cosd(Q1)*((L3*cosd(Q2+Q3+Q4))+(L2*cosd(Q2+Q3))+(L1*cosd(Q2)));
 yt = sind(Q1)*((L3*cosd(Q2+Q3+Q4))+(L2*cosd(Q2+Q3))+(L1*cosd(Q2)));

@@ -1,4 +1,4 @@
-function maliste = plot_links(thetas)
+function [maliste,drawing] = plot_links(thetas)
 % angles des liaisons pivots en RAD
 theta1 = thetas(1);
 theta2 = thetas(2);
@@ -47,11 +47,15 @@ y_list = [0 0 y2 y3 yt yt];
 z_list = [0 d1 z2 z3 zt zt];
 
 maliste = [x_list ; y_list; z_list];
-
-
-plot3(x_list,y_list,z_list)
+hold on
 axis equal
+set(gca,'XLim',[0 0.3],'YLim',[-0.3 0.3],'ZLim',[0 0.4])
+set(gcf,'Visible','on')
 title('3D Workspace') ; xlabel('x (m)') ; ylabel('y (m)') ; zlabel('z (m)') ;
+view(147,25)
+grid on
 
+drawing = plot3(x_list,y_list,z_list,'k-o');
+plot3(x_list(end),y_list(end),z_list(end),'r-x');
 
 end
