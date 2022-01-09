@@ -24,23 +24,15 @@ T_16 = T_12 * T_23  *T_34 *T_45 *T_56;
 
 %T_16(ligne, colonne)
 
-%compute euler angles from rotation matrix:
-if (abs(T_16(3,1)) ~= 1)
-    Euler_theta = -asin(T_16(3,1));
-    Euler_psi = atan2(T_16(3,2)/cos(Euler_theta),T_16(3,3)/cos(Euler_theta));
-    Euler_phi = atan2(T_16(2,1)/cos(Euler_theta),T_16(1,1)/cos(Euler_theta));
-else
-    Euler_phi = 0;
-    if (T_16(3,1) == -1)
-        Euler_theta = pi/2;
-        Euler_psi = Euler_phi + atan2(T_16(1,2),T_16(1,3));
-    else
-        Euler_theta = -pi/2;
-        Euler_psi = -Euler_phi + atan2(-T_16(1,2),-T_16(1,3));
-    end
+PSI = Q2+Q3+Q4
+WRIST_ANGLE = Q5
 
-end
+xt = cosd(Q1)*((L3*cosd(Q2+Q3+Q4))+(L2*cosd(Q2+Q3))+(L1*cosd(Q2)));
+yt = sind(Q1)*((L3*cosd(Q2+Q3+Q4))+(L2*cosd(Q2+Q3))+(L1*cosd(Q2)));
+zt = (L3*sind(Q2+Q3+Q4))+(L2*sind(Q2+Q3))+(L1*sind(Q2))+d1;
 
-end_pos = [T_16(1,4) T_16(2,4) T_16(3,4) Euler_phi Euler_theta Euler_psi];
+end_pos = [xt yt zt PSI WRIST_ANGLE];
+
+%end_pos = [T_16(1,4) T_16(2,4) T_16(3,4) PSI WRIST_ANGLE];
 
 end

@@ -24,9 +24,27 @@ T_14 = T_12 * T_23  *T_34;
 T_15 = T_12 * T_23  *T_34 *T_45;
 T_16 = T_12 * T_23  *T_34 *T_45 *T_56;
 
-x_list = [0 T_12(1,4) T_13(1,4) T_14(1,4) T_15(1,4) T_16(1,4)];
-y_list = [0 T_12(2,4) T_13(2,4) T_14(2,4) T_15(2,4) T_16(2,4)];
-z_list = [0 T_12(3,4) T_13(3,4) T_14(3,4) T_15(3,4) T_16(3,4)];
+x2 = cosd(theta1)*((L1*cosd(theta2)));
+y2 = sind(theta1)*((L1*cosd(theta2)));
+z2 = (L3*(L1*sind(theta2)))+d1;
+
+x3 = cosd(theta1)*((L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+y3 = sind(theta1)*((L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+z3 = ((L2*sind(theta2+theta3))+(L1*sind(theta2)))+d1;
+
+xt = cosd(theta1)*((L3*cosd(theta2+theta3+theta4))+(L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+yt = sind(theta1)*((L3*cosd(theta2+theta3+theta4))+(L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+zt = (L3*sind(theta2+theta3+theta4))+(L2*sind(theta2+theta3))+(L1*sind(theta2))+d1;
+
+
+xt = cosd(theta1)*((L3*cosd(theta2+theta3+theta4))+(L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+yt = sind(theta1)*((L3*cosd(theta2+theta3+theta4))+(L2*cosd(theta2+theta3))+(L1*cosd(theta2)));
+zt = (L3*sind(theta2+theta3+theta4))+(L2*sind(theta2+theta3))+(L1*sind(theta2))+d1;
+
+
+x_list = [0 0 x2 x3 xt xt];
+y_list = [0 0 y2 y3 yt yt];
+z_list = [0 d1 z2 z3 zt zt];
 
 maliste = [x_list ; y_list; z_list];
 
