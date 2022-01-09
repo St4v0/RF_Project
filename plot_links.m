@@ -6,10 +6,10 @@ theta3 = thetas(3);
 theta4 = thetas(4);
 theta5 = thetas(5);
 
-d1 = 1; %0.079;
-L1 = 1; %0.121;
-L2 = 1; %0.121;
-L3 = 1; %0.142;
+d1 =0.079;
+L1 =0.121;
+L2 =0.121;
+L3 =0.142;
 %max height 0.463
 
 %calculate the matrixes

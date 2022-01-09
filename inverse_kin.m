@@ -1,9 +1,8 @@
 function thetas = inverse_kin(x,y,z,psi,theta)
-d1 = 1; %0.079;
-L1 = 1; %0.121;
-L2 = 1; %0.121;
-L3 = 1; %0.142;
-
+d1 =0.079;
+L1 =0.121;
+L2 =0.121;
+L3 =0.142;
 rho_prime = sqrt(x*x+y*y)-L3*cos(psi);
 z_prime = z-d1-L3*sin(psi);
 
