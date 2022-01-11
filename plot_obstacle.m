@@ -5,7 +5,7 @@ hold on
 axis equal
 set(gca,'XLim',[0 0.3],'YLim',[-0.3 0.3],'ZLim',[0 0.4])
 set(gcf,'Visible','on')
-title('3D Workspace') ; xlabel('x (m)') ; ylabel('y (m)') ; zlabel('z (m)') ;
+xlabel('x (m)') ; ylabel('y (m)') ; zlabel('z (m)') ;
 view(147,25)
 grid on
 
@@ -16,6 +16,6 @@ grid on
 
 h = 10;
 Z = Z*h;
-surf(Z,Y,X)
+surf(Z,Y,X,'FaceColor','interp')
 
 end
