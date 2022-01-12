@@ -1,5 +1,5 @@
 function [X,Y,Z] = plot_obstacle(r)
-% angles des liaisons pivots en RAD
+
 
 hold on
 axis equal
@@ -11,11 +11,9 @@ grid on
 
 
 [X,Y,Z] = cylinder(r);
-
-%Specify a height of 20 by modifying the Z coordinate. Plot the cylinder.
-
 h = 10;
 Z = Z*h;
+
 surf(Z,Y,X,'FaceColor','interp')
 
 end

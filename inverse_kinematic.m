@@ -1,4 +1,4 @@
-function theta_inverse = inv_kin3(x, y, z, Psi,Wrist_angle,sigma)
+function theta_inverse = inverse_kinematic(x, y, z, Psi,Wrist_angle,sigma)
     d1 =0.079;
     L1 =0.121;
     L2 =0.121;
@@ -21,6 +21,7 @@ function theta_inverse = inv_kin3(x, y, z, Psi,Wrist_angle,sigma)
     
     theta1 = atan2d(y, x);
     theta5 = Wrist_angle;
+    
     theta_inverse = [theta1, theta2, theta3, theta4, theta5];
 
 end
