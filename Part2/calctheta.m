@@ -1,4 +1,4 @@
-function thetas = calctheta (Xc,Yc,alpha,oui)
+function thetas = calctheta (Xc,Yc,alpha,plotpos)
 Sa = 170;
 L = 130;
 Rplat = 130;
@@ -29,8 +29,9 @@ arm3 = [[basex(3),  basex(3)+M(1, 3), PP(1, 3)]; [basey(3),  basey(3)+M(2,3), PP
 
 plat = [PP(1,1) PP(1,2) PP(1,3) PP(1,1); PP(2,1) PP(2,2) PP(2,3) PP(2,1)];
 
-if oui == 0   
+if plotpos == 0   
     hold on
+    axis equal
     set(gcf,'Visible','on','Position', [10 10 600 400])
 
     plot(basex,basey)
@@ -39,16 +40,15 @@ if oui == 0
     plot(arm3(1,:),arm3(2,:))
     plot(plat(1,:),plat(2,:))
     plot(Xc,Yc)
-
+    
+    title('Representation of the planar robot')
+    xlabel('x (mm)')
+    ylabel('y (mm)')
     hold off
     
-elseif oui == 1
+elseif plotpos == 1
     hold on
-    set(gcf,'Visible','on','Position', [10 10 600 400])
-
-%     plot(basex,basey,'b')
-%     plot(plat(1,:),plat(2,:),'x')
-    
+    set(gcf,'Visible','on','Position', [10 10 600 400])  
     hold off
 end
 
